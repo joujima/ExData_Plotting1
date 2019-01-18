@@ -15,7 +15,7 @@ if(!file.exists(unzipfilename)){
 ## At this point, we must have a unzipped file.
 
 ## Reading data set as characters
-power_consumption_dataset <- read.table(file = unzipfilename,header = TRUE, sep = ";", colClasses = "character")
+power_consumption_dataset <- read.table(file = unzipfilename,header = TRUE, sep = ";", colClasses = "character", na.strings = "?")
 
 ## Converting characters to correct date formats
 power_consumption_dataset$Date <- as.Date(power_consumption_dataset$Date, format="%d/%m/%Y")
